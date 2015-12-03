@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
 		table.string('description');
 		table.string('points');
 		table.string('updown');
-		table.integer('tool_id').referencesColumn('id').inTable('tool');
+		table.integer('tool_id').references('id').inTable('tool');
 	})
 };
 

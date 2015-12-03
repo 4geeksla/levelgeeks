@@ -45,7 +45,7 @@ module.exports.connections = {
     host: 'localhost',
     user: 'root',
     password: 'Root123',
-    database: "levelgeeks_sails"
+    database: 'levelgeeks'
   },
 
   /***************************************************************************

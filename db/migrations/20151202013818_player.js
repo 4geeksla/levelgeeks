@@ -5,8 +5,9 @@ exports.up = function(knex, Promise) {
 		table.increments();
 		table.string('initials');
 		table.string('profile');
-		table.integer('user_id').referencesColumn('id').inTable('user');
-		table.integer('level_id').referencesColumn('id').inTable('level');
+		table.integer('points');
+		table.integer('user_id').references('id').inTable('user');
+		table.integer('level_id').references('id').inTable('level');
 		table.timestamps();
 	})
 };
