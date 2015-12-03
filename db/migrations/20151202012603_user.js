@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
 		table.string('email');
 		table.string('password');
 		table.string('enabled');
-		table.integer('role_id').referencesColumn('id').inTable('role');
+		table.integer('role_id').references('id').inTable('role');
 		table.timestamps();
 	}).then(function(){
 		console.log('table users created');
