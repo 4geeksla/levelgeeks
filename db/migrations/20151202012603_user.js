@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
 		table.increments('id');
 		table.string('username');
 		table.string('first_name');
-		table.string('last_name');		
+		table.string('last_name');
 		table.string('email');
 		table.string('password');
 		table.string('enabled');
