@@ -6,6 +6,9 @@
 */
 
 module.exports = {
+
+  identity: 'player',
+
 	attributes: {
 		initials: {
 			type: 'string'
@@ -22,9 +25,10 @@ module.exports = {
 		level:{
 			model:'level'
 		},
-		playerrater:{
+    //relationship many to many with rater
+		rater:{
 			collection: 'rater',
-			via: 'raterplayer',
+			via: 'player',
 			dominant: true
 		}
 	}

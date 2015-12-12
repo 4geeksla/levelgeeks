@@ -7,12 +7,14 @@
 
 module.exports = {
 
+  identity: 'rater',
+
 	attributes: {
 		name: {
 			type: 'string'
 		},
 		description: {
-			type: 'string'			
+			type: 'string'
 		},
 		state: {
 			type: 'string'
@@ -26,9 +28,10 @@ module.exports = {
 		tool: {
 			model: 'tool'
 		},
-		ratertplayer: {
+    //relationship many to many with player
+		player: {
 			collection: 'player',
-			via: 'playerrater'
+			via: 'rater'
 		}
 
 	}
