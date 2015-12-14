@@ -27,10 +27,21 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  migrate: 'alter',
+  migrate: 'safe',
   schema: true,
   autoPK: true,
   autoCreatedAt: true,
   autoUpdateAt: true,
-
+  attributes: {
+    createdAt: {
+      type: 'datetime',
+      defaultsTo: function (){ return new Date(); },
+      columnName: 'created_at',
+    },
+    updatedAt: {
+      type: 'datetime',
+      defaultsTo: function (){ return new Date(); },
+      columnName: 'updated_at',
+    }
+  }
 };
