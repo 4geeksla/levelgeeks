@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
 		table.increments('id');
 		table.string('name');
 		table.string('description');
+      table.timestamps();
 	}).then(function(){
 		console.log('table role created');
 		return true;

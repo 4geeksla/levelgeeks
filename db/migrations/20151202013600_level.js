@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
 		table.increments();
 		table.integer('level');
 		table.integer('points');
+    table.timestamps();
 	}).then(function(){
 		console.log('table level created');
 		return true;

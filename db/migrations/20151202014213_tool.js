@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
 		table.string('description');
 		table.string('url');
 		table.string('type');
+    table.timestamps();
 	}).then(function(){
 		console.log('table tool created');
 		return true;

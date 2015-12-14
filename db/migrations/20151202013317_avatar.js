@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
 		table.increments();
 		table.string('description');
 		table.string('avatar');
+    table.timestamps();
 	}).then(function(){
 		console.log('table avatar created');
 		return true;
