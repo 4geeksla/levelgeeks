@@ -9,13 +9,13 @@ exports.up = function(knex, Promise) {
 		table.string('email');
 		table.string('password');
 		table.string('enabled');
-		table.integer('role_id').references('id').inTable('role');
+		table.integer('role_id').unsigned().index().references('id').inTable('role');
 		table.timestamps();
 	}).then(function(){
 		console.log('table users created');
 		return true;
 	},function(){
-		console.log('table useres could not be created');
+		console.log('table users could not be created');
 		return false;
 	})
 };

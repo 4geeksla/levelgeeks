@@ -6,9 +6,15 @@ exports.up = function(knex, Promise) {
 		table.string('initials');
 		table.string('profile');
 		table.integer('points');
-		table.integer('user_id').references('id').inTable('user');
-		table.integer('level_id').references('id').inTable('level');
+		table.integer('user_id').unsigned().index().references('id').inTable('user');
+		table.integer('level_id').unsigned().index().references('id').inTable('level');
 		table.timestamps();
+	}).then(function(){
+		console.log('table player created');
+		return true;
+	},function(){
+		console.log('table player could not be created');
+		return false;
 	})
 };
 

@@ -7,6 +7,12 @@ exports.up = function(knex, Promise) {
 		table.string('description');
 		table.string('url');
 		table.string('type');
+	}).then(function(){
+		console.log('table tool created');
+		return true;
+	},function(){
+		console.log('table tool could not be created');
+		return false;
 	})
 };
 

@@ -7,7 +7,13 @@ exports.up = function(knex, Promise) {
 		table.string('description');
 		table.string('points');
 		table.string('updown');
-		table.integer('tool_id').references('id').inTable('tool');
+		table.integer('tool_id').unsigned().index().references('id').inTable('tool');
+	}).then(function(){
+		console.log('table rater created');
+		return true;
+	},function(){
+		console.log('table rater could not be created');
+		return false;
 	})
 };
 

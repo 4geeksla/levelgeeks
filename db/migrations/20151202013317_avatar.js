@@ -5,6 +5,12 @@ exports.up = function(knex, Promise) {
 		table.increments();
 		table.string('description');
 		table.string('avatar');
+	}).then(function(){
+		console.log('table avatar created');
+		return true;
+	},function(){
+		console.log('table avatar could not be created');
+		return false;
 	});
 };
 
