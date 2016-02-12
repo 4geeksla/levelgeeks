@@ -12,14 +12,18 @@ module.exports = {
 			type: 'string'
 		},
 		description: {
-			type: 'string'			
+			type: 'string'
 		},
 		url: {
 			type: 'string'
 		},
 		type: {
 			type: 'integer'
-		}
+		},
+    rater: {
+      collection: 'rater',
+      via: 'tool'
+    }
 	}
 };
 
